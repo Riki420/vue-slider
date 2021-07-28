@@ -12,9 +12,13 @@
     <title>Vue Slider</title>
 </head>
 <body> 
+
     <div id="root">
         <div class="container">
             <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Slider</h1>
+                </div>
                 <div class="col-3 d-flex align-items-center justify-content-center">
                     <i class="fas fa-angle-left fa-5x cursor" @click="decreaseIndex"></i>
                 </div>
@@ -25,6 +29,15 @@
                          :src="url" 
                          class="img-fluid" 
                          :class="isActive(imgIndex)">
+                         <div id="slider-dot">
+                             <div 
+                             v-for="(dot, index) in images" 
+                             :class="isActive(index)" 
+                             class="dot mx-2 cursor" 
+                             @click="setCurrentIndex(index)">
+
+                             </div>
+                         </div>
                     </figure>
                 </div>
                 <div class="col-3 d-flex align-items-center justify-content-center">

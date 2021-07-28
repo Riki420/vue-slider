@@ -16,19 +16,17 @@ const root = new Vue({
         isActive(index){
             return this.currentIndex === index ? 'active' : '';             //grazie a questa funzione vediamo se è presente l'active
         },
-        increaseIndex(){                                                    //funzione per incrementare l'index dell'immagine
-            if(this.cuerrentIndex === this.images.length - 1){               //se il currentIndex raggiunge la lunghezza massima dell'array torna al primo elemento
-                this.currentIndex = 0;
-            } else{
-                this.currentIndex++;
-            }
+        increaseIndex(){ 
+            const lastIndex = this.images.length - 1;                                                   //funzione per incrementare l'index dell'immagine
+            this.currentIndex = this.currentIndex === lastIndex ? 0 : this.currentIndex + 1;
         },
         decreaseIndex(){
-            if(this.cuerrentIndex === 0){                                   //Il currentIndex non può andare sotto zero
-                this.currentIndex = this.images.length - 1;
-            } else{
-                this.currentIndex--;
-            }
+            const lastIndex = this.images.length - 1;                                                   //funzione per decrementare l'index dell'immagine
+            this.currentIndex = this.currentIndex === 0 ? lastIndex : this.currentIndex - 1;
+            
+        },
+        setCurrentIndex(newIndex){
+            this.currentIndex = newIndex;
         }
     }
 })
