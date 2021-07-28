@@ -16,14 +16,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-3 d-flex align-items-center justify-content-center">
-                    <i class="fas fa-angle-left"></i>
+                    <i class="fas fa-angle-left fa-5x cursor"></i>
                 </div>
-                <div class="col-6 my-s-height">
-                    <div class="d-flex align-items-center">
-                        <img v-for="(url,imgIndex) in images" :src="url" class="img-fluid">
-                    </div>
+                <div class="col-6">
+                    <figure class="slider d-flex align-items-center">
+                        <img
+                         v-for="(url,imgIndex) in images"
+                         :src="url" 
+                         class="img-fluid" 
+                         :class="isActive(imgIndex)">
+                    </figure>
                 </div>
-                <div class="col-3 d-flex align-items-center justify-content-center"><i class="fas fa-angle-right"></i></div>
+                <div class="col-3 d-flex align-items-center justify-content-center">
+                    <i class="fas fa-angle-right fa-5x cursor"></i>
+                </div>
             </div>
         </div>
     </div>

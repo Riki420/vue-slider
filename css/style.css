@@ -1,3 +1,16 @@
-.my-s-height{
+.slider{
     height: 800px;
+}
+
+.slider img{
+    display: none;
+}
+
+
+.slider img.active{
+    display: inline-block;
+}
+
+.cursor{
+    cursor: pointer;
 }
