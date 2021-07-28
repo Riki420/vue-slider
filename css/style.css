@@ -1,15 +1,25 @@
 .slider{
-    height: 800px;
     display: relative;
 }
 
 .slider img{
     display: none;
+
 }
 
 
 .slider img.active{
     display: inline-block;
+    animation: fadeIn 1s linear;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .cursor{
@@ -24,7 +34,7 @@
     align-items: center;
     justify-content: space-evenly;
     position: absolute;
-    bottom: 100px;
+    bottom: 200px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -39,4 +49,17 @@
 
 .mx-2{
     margin: 0 20px;
+}
+
+.bg-c-g{
+    background-color: #cfcfcf;
+}
+
+.bg-c-g:hover{
+    background-color: #adadad;
+}
+
+.img-resize{
+    height: 500px;
+    width: 100%;
 }
