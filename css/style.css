@@ -16,9 +16,13 @@
 @keyframes fadeIn {
     0%{
         opacity: 0;
+        filter:grayscale(0.8) blur(0.5);
+
     }
     100%{
         opacity: 1;
+        filter:grayscale(1) blur(1);
+
     }
 }
 
